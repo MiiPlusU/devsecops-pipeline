@@ -8,3 +8,5 @@
 # Ignore Terraform backup files
 *.tfbackup
 
+# Ignore Terraform Lock File
+.terraform.lock.hcl
