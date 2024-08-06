@@ -30,3 +30,19 @@ module "ec2" {
     Purpose     = "WebServer"
   }
 }
+
+module "vpc" {
+  source = "./modules/vpc"
+}
+
+module "eks" {
+  source          = "./modules/eks"
+  cluster_name    = "my-eks-cluster"
+  eks_role_arn = module.iam.eks_iam_role_arn
+  subnet_ids     = [
+    module.vpc.public_subnet_a_id,
+    module.vpc.public_subnet_b_id,
+    module.vpc.private_subnet_a_id,
+    module.vpc.private_subnet_b_id
+  ]
+}
