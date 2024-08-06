@@ -1,4 +1,4 @@
-output "iam_role_arn" {
+output "ec2_iam_role_arn" {
   description = "The ARN of the IAM role"
   value       = aws_iam_role.ec2_role.arn
 }
@@ -14,4 +14,9 @@ output "user_arn" {
 
 output "ec2_instance_profile_name" {
   value = aws_iam_instance_profile.ec2_instance_profile.name
+}
+
+output "eks_iam_role_arn" {
+  description = "The ARN of the IAM role"
+  value = aws_iam_role.eks_cluster_role.arn
 }
