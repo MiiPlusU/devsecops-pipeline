@@ -1,19 +1,10 @@
-resource "aws_iam_role_policy_attachment" "dynamodb_policy" {
-  role       = aws_iam_role.ec2_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+# Attach AdministratorAccess policy to the IAM group
+resource "aws_iam_group_policy_attachment" "admin_policy_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+  group     = aws_iam_group.admin_group.name
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
-resource "aws_iam_role_policy_attachment" "ec2_policy" {
-  role       = aws_iam_role.ec2_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-}
 
-resource "aws_iam_role_policy_attachment" "s3_policy" {
-  role       = aws_iam_role.ec2_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-}
-
-resource aws_iam_role_policy_attachment "eks_policy_attachment" {
-    role = aws_iam_role.eks_cluster_role.name
-    policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-}
