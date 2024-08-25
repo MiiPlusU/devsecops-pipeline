@@ -3,10 +3,10 @@ controller:
     repository: "jenkins/jenkins"
     tag: "lts"
   installPlugins:
-    - kubernetes:1.29.4
-    - workflow-aggregator:2.6
-    - credentials-binding:1.24
-    - git:4.7.1
+    - kubernetes:4285.v50ed5f624918
+    - workflow-aggregator:600.vb_57cdd26fdd7
+    - credentials-binding:681.vf91669a_32e45
+    - git:5.4.0
   resources:
     requests:
       cpu: "500m"
@@ -25,7 +25,7 @@ controller:
 persistence:
   enabled: true
   size: 8Gi
-  storageClass: "efs"
+  storageClass: "gp3"
 
 agent:
   enabled: true

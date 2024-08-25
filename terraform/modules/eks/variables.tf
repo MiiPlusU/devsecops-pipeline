@@ -1,13 +1,34 @@
-variable "eks_role_arn" {
-  description = "The ARN of the IAM role to associate with the EKS cluster"
-  type        = string
-}
 variable "cluster_name" {
-  description = "The name of the EKS cluster"
+  description = "name of cluster"
+  type = string
+}
+
+variable "cluster_version" {
+  description = "version of cluster"
+  type = string
+}
+
+variable "node_group_min_size" {
+  description = "min size of node group"
+  type = number
+}
+
+variable "node_group_max_size" {
+  description = "max size of node group"
+  type = number
+}
+
+variable "node_group_desired_size" {
+  description = "desired size of node group"
+  type = number
+}
+
+variable "node_group_name" {
+  description = "name of Node Group."
   type        = string
 }
 
-variable "subnet_ids" {
-  description = "The subnet IDs for the EKS cluster"
-  type        = list(string)
+variable "key_name" {
+  description = "key pair associated"
+  type        = string
 }

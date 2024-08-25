@@ -1,4 +1,7 @@
-resource "aws_iam_user" "terraform_user" {
-  name = var.user_name
-}
+resource "aws_iam_user" "admin_user" {
+  name = "terraform-user"
 
+  lifecycle {
+    prevent_destroy = true
+  }
+}
