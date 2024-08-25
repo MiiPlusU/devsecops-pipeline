@@ -1,0 +1,14 @@
+---
+- name: Set up development environment
+  hosts: all
+  become: yes  # Run tasks as superuser
+  tasks:
+    - name: Update apt cache
+      yum:
+        update_cache: yes
+  roles:
+    - common
+    - python
+    - nodejs
+    - nginx
+    - git

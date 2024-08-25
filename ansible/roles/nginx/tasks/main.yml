@@ -1,0 +1,16 @@
+# ---
+# - name: Install Nginx
+#   amazon.aws.amazon_linux_extras:
+#     name: nginx1
+#     state: present
+
+# - name: Ensure Nginx is started and enabled
+#   systemd:
+#     name: nginx
+#     state: started
+#     enabled: yes
+
+# - name: Set up a basic HTML page
+#   copy:
+#     content: "<html><body><h1>Welcome to your development environment!</h1></body></html>"
+#     dest: /var/www/html/index.html
