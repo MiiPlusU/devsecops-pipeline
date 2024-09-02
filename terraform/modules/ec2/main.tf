@@ -7,7 +7,7 @@ resource "aws_instance" "this" {
   root_block_device {
     volume_type           = "gp2"
     volume_size           = 8
-    # delete_on_termination = false
+    delete_on_termination = false
   }
   tags                 = var.tags
 }
