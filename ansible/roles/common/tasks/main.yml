@@ -1,6 +1,6 @@
 ---
-- name: update instance packages
-  yum:
-    name: "*"
-    state: latest
+- name: Update instance packages
+  apt:
+    upgrade: dist
+    update_cache: yes
   ignore_errors: yes

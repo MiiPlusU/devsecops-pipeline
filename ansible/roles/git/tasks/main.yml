@@ -1,7 +1,8 @@
 - name: Install Git
-  yum:
+  apt:
     name: git
     state: present
+    update_cache: yes
 
 - name: Verify Git installation
   command: git --version
@@ -10,4 +11,4 @@
 
 - name: Print Git version
   debug:
-    msg: "Git version installed: {{git_version.stdout}}"
+    msg: "Git version installed: {{ git_version.stdout }}"

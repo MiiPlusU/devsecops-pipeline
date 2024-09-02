@@ -1,18 +1,11 @@
-- name: Install nvm
-  become: yes
-  shell: |
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-  environment:
-    HOME: /home/ec2-user
-  args:
-    creates: /home/ec2-user/.nvm
-
 - name: Load nvm and install Node.js
   become: yes
   shell: |
-    source ~/.nvm/nvm.sh
-    nvm install 14  # Example for Node.js 13.x, adjust as needed for compatibility
+    source /home/ubuntu/.nvm/nvm.sh
+    nvm install 14  # Example for Node.js 14.x, adjust as needed for compatibility
     nvm alias default 14
     node -e "console.log('Running Node.js ' + process.version)"
   environment:
-    HOME: /home/ec2-user
+    HOME: /home/ubuntu
+  args:
+    executable: /bin/bash

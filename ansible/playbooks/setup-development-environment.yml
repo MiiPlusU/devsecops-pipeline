@@ -4,8 +4,9 @@
   become: yes  # Run tasks as superuser
   tasks:
     - name: Update apt cache
-      yum:
+      apt:
         update_cache: yes
+
   roles:
     - common
     - python
