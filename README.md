@@ -128,7 +128,7 @@ devsecops-pipeline/
 
 ## Contributors
 
-- **[Your Name]** - DevOps Engineer
+- **Ishmael Sesay** - DevOps Engineer
 
 ## License
 
